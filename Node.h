@@ -1,17 +1,18 @@
 #include<iostream>
-template<class T>
+using namespace std;
+template<typename T>
 class Node
 {
  public:
-//------------Defining alternate names so T does not appear in the program----------------
+ 	typedef T value_type;
+ 	typedef T* pointer_type;
+ 	typedef Node<T> node_type;
+ 	typedef node_type* node_pointer;
 
-	typedef Node<T> node_type;
-	typedef T* pointer_type;
-	typedef T  value_type;
-
-//----------------------------------------------------------------------------------------
-
-	node_type *left,*right;
-	T data;
+	node_pointer next;
+	value_type data;
+	Node()
+	{
+		this->next = NULL;
+	}
 };
-
